@@ -1,0 +1,137 @@
+import { motion } from 'framer-motion';
+import { FaGithub, FaWhatsapp, FaLinkedin, FaEnvelope } from 'react-icons/fa6';
+import { portfolioData } from '@/data/portfolioData';
+import Button from '@/components/Button';
+import HeroBackground from './HeroBackground';
+
+// WhatsApp acepta el número en formato internacional sin "+", espacios ni guiones.
+const whatsappNumber = portfolioData.hero.phone.replace(/\D/g, '');
+const whatsappUrl = `https://wa.me/${whatsappNumber}`;
+
+export default function Hero() {
+  return (
+    <section
+      className="hero-fullscreen flex items-center justify-center pt-32 pb-20 relative overflow-hidden w-full"
+      id="home"
+    >
+      <HeroBackground />
+
+      <div className="container relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="flex flex-col lg:flex-row items-center justify-between gap-12 w-full"
+        >
+          {/* Texto y Contenido Principal */}
+          <div className="flex flex-col items-center lg:items-start text-center lg:text-left flex-1 px-0">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-extrabold mb-4 tracking-tighter leading-[1.1] lg:-ml-1 lg:pr-2">
+              <span className="block text-foreground drop-shadow-md">Hola, soy</span>
+              <span className="block bg-gradient-to-r from-white via-blue-light to-blue bg-clip-text text-transparent drop-shadow-lg pr-1 lg:pr-2">
+                {portfolioData.hero.name.split(' ').slice(0, 2).join(' ')}
+              </span>
+            </h1>
+
+            <div className="flex flex-col gap-2 mb-6 w-full items-center lg:items-start">
+              {portfolioData.hero.roles?.map((role, idx) => (
+                <h3
+                  key={idx}
+                  className={`text-lg sm:text-xl lg:text-2xl font-semibold tracking-tight ${
+                    idx === 2 ? 'text-foreground/50 text-base lg:text-lg' : 'text-foreground/80'
+                  }`}
+                >
+                  {role}
+                </h3>
+              ))}
+            </div>
+
+            <p className="text-sm md:text-base font-light text-foreground/70 leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
+              {portfolioData.hero.subtitle}
+            </p>
+
+            {/* Botones de Acción */}
+            <div className="flex flex-col sm:flex-row gap-5 items-center justify-center lg:justify-start w-full mb-10">
+              <Button href="#projects" variant="primary" fullWidth className="sm:w-auto">
+                Explorar Proyectos
+              </Button>
+              <Button
+                href={portfolioData.hero.cvUrl || '/documents/cv.pdf'}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="secondary"
+                fullWidth
+                className="sm:w-auto"
+              >
+                Descargar CV
+              </Button>
+            </div>
+
+            {/* Redes Sociales */}
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 items-center justify-center lg:justify-start w-full">
+              <div className="flex gap-4 items-center justify-center">
+                <Button
+                  href={portfolioData.hero.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="icon"
+                  icon={FaLinkedin}
+                  aria-label="LinkedIn"
+                />
+                <Button
+                  href={portfolioData.hero.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="icon"
+                  icon={FaGithub}
+                  aria-label="GitHub"
+                />
+                <Button
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="icon"
+                  icon={FaWhatsapp}
+                  aria-label="WhatsApp"
+                />
+              </div>
+              <Button href={`mailto:${portfolioData.hero.email}`} variant="iconText">
+                <FaEnvelope className="flex-none text-xl" />
+                <span className="text-sm font-medium truncate">{portfolioData.hero.email}</span>
+              </Button>
+            </div>
+          </div>
+
+          {/* Imagen de Perfil */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="flex-1 w-full max-w-sm lg:max-w-md relative mx-auto lg:mx-0"
+          >
+            <div className="relative aspect-square w-full">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-light to-blue rounded-2xl transform rotate-6 opacity-30 blur-sm scale-105"></div>
+              <div className="absolute inset-0 bg-gradient-to-tl from-blue to-transparent rounded-2xl transform -rotate-3 opacity-40 blur-sm scale-105"></div>
+
+              <div className="relative w-full h-full rounded-2xl border-2 border-blue-light/30 overflow-hidden bg-background/80 backdrop-blur-sm shadow-[0_0_30px_rgba(59,130,246,0.3)] group">
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent z-10 opacity-60"></div>
+                <img
+                  src="/images/profile.jpg"
+                  alt={portfolioData.hero.name}
+                  width="512"
+                  height="512"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-in-out"
+                  onError={(e) => {
+                    e.target.src =
+                      'https://ui-avatars.com/api/?name=Luis+Melita&size=512&background=0D0D0D&color=3B82F6&rounded=false&bold=true';
+                  }}
+                />
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

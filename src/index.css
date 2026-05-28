@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-montserrat: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+[id] {
+  scroll-margin-top: 100px;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased min-h-screen relative overflow-x-hidden;
+  }
+}
+
+/* Base Utility Classes para Liquid Glass */
+@layer components {
+  .glass-panel {
+    background: theme('colors.glass.bg');
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid theme('colors.glass.border');
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.18), 0 14px 36px rgba(59, 130, 246, 0.14);
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transform: translateZ(0);
+  }
+
+  .card-hover-glow {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card-hover-glow:hover {
+    border-color: rgba(59, 130, 246, 0.45);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.42), 0 0 22px rgba(59, 130, 246, 0.2);
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold inline-block bg-gradient-to-r from-blue-light to-white bg-clip-text text-transparent tracking-tight leading-[1.15] pb-1;
+  }
+
+  .section-inner {
+    @apply w-full relative;
+  }
+
+  .section-header {
+    @apply flex flex-col gap-4 items-center text-center;
+  }
+
+  .section-lead {
+    @apply text-sm md:text-base font-light text-foreground/70 leading-relaxed max-w-3xl mx-auto text-center;
+  }
+
+  .container {
+    @apply max-w-6xl mx-auto px-6 relative z-10;
+  }
+
+  .section {
+    @apply py-14 sm:py-16;
+    contain: layout style;
+  }
+}
+
+/* Cursor interactive tracking hiding */
+body.hovering-card #cursor-flare {
+  opacity: 0 !important;
+  visibility: hidden;
+}
+
+/* ============================================================
+   Hero section — siempre llena el viewport visible.
+   100vh es el fallback para navegadores viejos; 100dvh respeta
+   la barra de URL móvil (se ajusta cuando aparece/desaparece).
+   ============================================================ */
+.hero-fullscreen {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* ============================================================
+   Hero background orbs — animaciones CSS en GPU compositor.
+   Antes vivían en Framer Motion; al pasar a CSS dejan de costar
+   tiempo de JS por frame.
+   ============================================================ */
+.hero-orb {
+  position: absolute;
+  border-radius: 9999px;
+  mix-blend-mode: screen;
+  z-index: 10;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.hero-orb--1 {
+  top: -12%;
+  left: 8%;
+  width: 42vw;
+  height: 42vw;
+  background: rgba(59, 130, 246, 0.32); /* blue, más intenso */
+  filter: blur(120px);
+  animation: orb-float-1 14s ease-in-out infinite;
+}
+
+.hero-orb--2 {
+  bottom: -15%;
+  right: 3%;
+  width: 52vw;
+  height: 52vw;
+  background: rgba(59, 130, 246, 0.36); /* blue, más intenso */
+  filter: blur(140px);
+  animation: orb-float-2 17s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.hero-orb--3 {
+  top: 25%;
+  left: 58%;
+  width: 32vw;
+  height: 32vw;
+  background: rgba(147, 197, 253, 0.18); /* blue-light, más intenso */
+  filter: blur(90px);
+  animation: orb-float-3 11s ease-in-out infinite;
+  animation-delay: -5s;
+}
+
+/* Orbe acento brillante y rápido — el que aporta el "movimiento notable" */
+.hero-orb--4 {
+  top: 55%;
+  left: 18%;
+  width: 22vw;
+  height: 22vw;
+  background: rgba(147, 197, 253, 0.28); /* blue-300 brillante */
+  filter: blur(80px);
+  animation: orb-float-4 9s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+@keyframes orb-float-1 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.9; }
+  25%      { transform: translate3d(160px, -120px, 0) scale(1.2); opacity: 1; }
+  50%      { transform: translate3d(60px, 100px, 0) scale(0.85); opacity: 0.7; }
+  75%      { transform: translate3d(-120px, 40px, 0) scale(1.1); opacity: 0.95; }
+}
+
+@keyframes orb-float-2 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.85; }
+  25%      { transform: translate3d(-180px, 130px, 0) scale(1.25); opacity: 1; }
+  50%      { transform: translate3d(80px, -90px, 0) scale(0.75); opacity: 0.65; }
+  75%      { transform: translate3d(140px, 60px, 0) scale(1.15); opacity: 0.95; }
+}
+
+@keyframes orb-float-3 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.8; }
+  25%      { transform: translate3d(-110px, 90px, 0) scale(1.18); opacity: 1; }
+  50%      { transform: translate3d(120px, -110px, 0) scale(0.8); opacity: 0.6; }
+  75%      { transform: translate3d(-60px, -80px, 0) scale(1.05); opacity: 0.9; }
+}
+
+/* Recorrido amplio + rotación leve para el orbe acento */
+@keyframes orb-float-4 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); opacity: 0.8; }
+  33%      { transform: translate3d(220px, -160px, 0) scale(1.35) rotate(120deg); opacity: 1; }
+  66%      { transform: translate3d(-180px, 120px, 0) scale(0.7) rotate(240deg); opacity: 0.55; }
+}
+
+/* ============================================================
+   Respetar la preferencia del sistema. Para usuarios con
+   prefers-reduced-motion: reduce, eliminamos las animaciones
+   infinitas y dejamos el sitio estático (mejor accesibilidad
+   y un alivio para equipos modestos).
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-orb {
+    animation: none;
+  }
+
+  /* Apagamos el halo del cursor global */
+  #cursor-flare {
+    display: none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-blue rounded hover:bg-blue transition-colors;
+}
