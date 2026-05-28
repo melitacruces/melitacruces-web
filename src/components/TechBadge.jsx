@@ -1,5 +1,5 @@
 import {
-  FaReact, FaNodeJs, FaPython, FaCss, FaHtml5, FaSquareJs,
+  FaReact, FaNodeJs, FaPython, FaCss, FaHtml5, FaJs,
   FaDatabase, FaServer, FaRobot, FaCodeBranch, FaGears, FaMicrochip,
 } from 'react-icons/fa6';
 import { SiPytorch, SiHuggingface, SiTailwindcss, SiNextdotjs, SiVite, SiPostgresql } from 'react-icons/si';
@@ -15,7 +15,7 @@ export default function TechBadge({ tech }) {
     "CSS Vanilla": { icon: FaCss, color: "#1572B6", bg: "rgba(21, 114, 182, 0.1)" },
     "CSS": { icon: FaCss, color: "#1572B6", bg: "rgba(21, 114, 182, 0.1)" },
     "HTML": { icon: FaHtml5, color: "#E34F26", bg: "rgba(227, 79, 38, 0.1)" },
-    "JavaScript": { icon: FaSquareJs, color: "#F7DF1E", bg: "rgba(247, 223, 30, 0.1)" },
+    "JavaScript": { icon: FaJs, color: "#F7DF1E", bg: "rgba(247, 223, 30, 0.1)" },
     "Tailwind": { icon: SiTailwindcss, color: "#06B6D4", bg: "rgba(6, 182, 212, 0.1)" },
     "Next.js": { icon: SiNextdotjs, color: "#FFFFFF", bg: "rgba(255, 255, 255, 0.1)" },
     "PostgreSQL": { icon: SiPostgresql, color: "#4169E1", bg: "rgba(65, 105, 225, 0.1)" },

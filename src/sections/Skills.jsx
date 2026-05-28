@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import {
-  FaHtml5, FaCss, FaSquareJs, FaReact, FaNodeJs, FaPython, FaGitAlt,
+  FaHtml5, FaCss, FaJs, FaReact, FaNodeJs, FaPython, FaGitAlt,
   FaDatabase, FaCloudflare, FaFileExcel, FaBrain, FaRobot,
   FaChartBar, FaChartLine, FaLayerGroup, FaCode,
 } from 'react-icons/fa6';
@@ -14,7 +14,7 @@ const skillIcons = {
   html: { component: FaHtml5, color: 'text-[#E34F26]' },
   css: { component: FaCss, color: 'text-[#1572B6]' },
   tailwind: { component: SiTailwindcss, color: 'text-[#06B6D4]' },
-  js: { component: FaSquareJs, color: 'text-[#F7DF1E]' },
+  js: { component: FaJs, color: 'text-[#F7DF1E]' },
   react: { component: FaReact, color: 'text-[#61DAFB]' },
   nextjs: { component: SiNextdotjs, color: 'text-foreground' },
   nodejs: { component: FaNodeJs, color: 'text-[#339933]' },
