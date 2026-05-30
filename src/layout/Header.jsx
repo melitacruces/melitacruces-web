@@ -46,9 +46,6 @@ export default function Header() {
   return (
     // Utilizo framer-motion para darle una animación de entrada suave cuando carga la página.
     <motion.header
-      initial={{ marginTop: -100, opacity: 0 }}
-      animate={{ marginTop: 0, opacity: 1 }}
-      transition={{ duration: 0.55, ease: 'easeOut' }}
       className={`fixed top-4 py-3 left-0 right-0 mx-auto max-w-6xl z-50 transition-[background-color,border-color,box-shadow] duration-300 rounded-2xl px-6 flex justify-between items-center group overflow-hidden border ${
         scrolled
           ? 'border-glass-border shadow-[0_8px_32px_rgba(0,0,0,0.6)] bg-background/60 backdrop-blur-xl'

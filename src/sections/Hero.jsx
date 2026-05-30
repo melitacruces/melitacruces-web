@@ -21,9 +21,6 @@ export default function Hero() {
 
       <div className="container relative z-10">
         <motion.div
-          initial={{ opacity: 0, top: 50 }}
-          animate={{ opacity: 1, top: 0 }}
-          transition={{ duration: 1, ease: 'easeOut' }}
           className="flex flex-col lg:flex-row items-center justify-between gap-12 w-full relative"
         >
           {/* Texto y Contenido Principal */}
@@ -106,9 +103,6 @@ export default function Hero() {
 
           {/* Imagen de Perfil */}
           <motion.div
-            initial={{ opacity: 0, left: 20 }}
-            animate={{ opacity: 1, left: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
             className="flex-1 w-full max-w-sm lg:max-w-md relative mx-auto lg:mx-0"
           >
             <div className="relative aspect-square w-full">
