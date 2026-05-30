@@ -1,16 +1,20 @@
 import { FaGithub, FaUpRightFromSquare, FaLock } from 'react-icons/fa6';
-import TechBadge from './TechBadge';
-import GlassCard from './GlassCard';
-import Button from './Button';
+import { TechBadge, GlassCard, Button } from '@/components';
 
+// Esta es la tarjeta principal que utilizo para mostrar mis proyectos más destacados.
+// Incluye una imagen de vista previa, descripciones y los enlaces al código o al demo.
 export default function ProjectCard({ proj, index }) {
+  // Pequeño retraso por columna (se reinicia cada fila) para un efecto cascada
+  // al aparecer, sin que las tarjetas de más abajo esperen demasiado.
+  const delay = (index % 3) * 80;
+
   return (
     <GlassCard
-      delay={index * 150}
+      delay={delay}
       padding="none"
-      className="overflow-hidden group transition-all duration-500 h-full flex flex-col"
+      className="overflow-hidden group h-full flex flex-col"
     >
-      <div className="relative w-full aspect-video overflow-hidden bg-black">
+      <div className="relative w-full aspect-video overflow-hidden bg-black rounded-t-2xl transform-gpu">
         {proj.image && (
           <img
             src={proj.image}
@@ -48,7 +52,7 @@ export default function ProjectCard({ proj, index }) {
             <Button
               variant="secondary"
               icon={FaLock}
-              className="h-10 px-4 sm:px-6 shrink-0 opacity-50 cursor-not-allowed pointer-events-none"
+              className="h-10 px-2 sm:px-4 flex-1 opacity-50 cursor-not-allowed pointer-events-none"
               disabled
               noShadow
               noHover
@@ -62,7 +66,7 @@ export default function ProjectCard({ proj, index }) {
               rel="noopener noreferrer"
               variant="secondary"
               icon={FaGithub}
-              className="h-10 px-4 sm:px-6 shrink-0"
+              className="h-10 px-2 sm:px-4 flex-1"
             >
               Código
             </Button>
@@ -74,7 +78,7 @@ export default function ProjectCard({ proj, index }) {
               rel="noopener noreferrer"
               variant="primary"
               icon={FaUpRightFromSquare}
-              className="h-10 px-4 sm:px-6 shrink-0"
+              className="h-10 px-2 sm:px-4 flex-1"
             >
               Preview
             </Button>

@@ -3,8 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luis Andrés Melita Cruces | Portafolio</title>
-    <meta name="description" content="Portafolio profesional de Luis Andrés Melita Cruces, Ingeniero Civil Industrial y Desarrollador Full Stack." />
+    
+    <!-- Etiquetas SEO Básicas: Aquí defino el título y descripción principal para los motores de búsqueda -->
+    <title>Luis Andrés Melita Cruces | Portafolio Profesional</title>
+    <meta name="description" content="Portafolio profesional de Luis Andrés Melita Cruces, Ingeniero Civil Industrial y Desarrollador Full Stack. Descubre mis proyectos y experiencia." />
+    <meta name="keywords" content="Luis Andrés Melita Cruces, Ingeniero Civil Industrial, Desarrollador Full Stack, React, Portafolio, Web Developer" />
+    <meta name="author" content="Luis Andrés Melita Cruces" />
+    <link rel="canonical" href="https://melitacruces.com/" />
+    
+    <!-- Open Graph / Facebook: Con esto aseguro que al compartir mi web en redes sociales, la tarjeta de previsualización se vea genial -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://melitacruces.com/" />
+    <meta property="og:title" content="Luis Andrés Melita Cruces | Portafolio Profesional" />
+    <meta property="og:description" content="Portafolio profesional de Luis Andrés Melita Cruces, Ingeniero Civil Industrial y Desarrollador Full Stack." />
+    <meta property="og:image" content="https://melitacruces.com/images/profile.jpg" />
+
+    <!-- Twitter: Configuración específica para compartir en Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://melitacruces.com/" />
+    <meta property="twitter:title" content="Luis Andrés Melita Cruces | Portafolio Profesional" />
+    <meta property="twitter:description" content="Portafolio profesional de Luis Andrés Melita Cruces, Ingeniero Civil Industrial y Desarrollador Full Stack." />
+    <meta property="twitter:image" content="https://melitacruces.com/images/profile.jpg" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,10 +32,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
     />
-    <!-- Hero profile picture: cargar lo antes posible (LCP candidate) -->
+    <!-- Hero profile picture: La cargo lo antes posible para mejorar el LCP (Largest Contentful Paint) y la experiencia de usuario -->
     <link rel="preload" as="image" href="/images/profile.jpg" fetchpriority="high" />
   </head>
   <body>
+    <!-- Este div es donde React montará toda mi aplicación -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

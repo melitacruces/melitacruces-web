@@ -1,16 +1,22 @@
 import { FaGithub, FaUpRightFromSquare, FaChevronDown, FaLock } from 'react-icons/fa6';
 import { motion, AnimatePresence } from 'framer-motion';
-import TechBadge from './TechBadge';
-import GlassCard from './GlassCard';
-import Button from './Button';
+import { TechBadge, GlassCard, Button } from '@/components';
 
+// Este componente lo creé para la sección de proyectos secundarios.
+// Funciona como un acordeón (se expande al hacer click) para ahorrar espacio vertical
+// y mantener el diseño limpio cuando hay mucha información.
 export default function CollapsibleProjectCard({ proj, index, isExpanded, onToggle }) {
+  // Mismo escalonado por columna que las tarjetas destacadas, para que la
+  // cuadrícula aparezca de forma uniforme y coordinada.
+  const delay = (index % 3) * 80;
+
   return (
+    // Reutilizo mi componente GlassCard para mantener la estética uniforme.
     <GlassCard
-      delay={index * 150}
+      delay={delay}
       padding="none"
       onClick={onToggle}
-      className="overflow-hidden group transition-all duration-500 flex flex-col cursor-pointer"
+      className="overflow-hidden group flex flex-col cursor-pointer"
     >
       {/* Preload image eagerly so it's ready when card expands */}
       {proj.image && (
@@ -30,7 +36,7 @@ export default function CollapsibleProjectCard({ proj, index, isExpanded, onTogg
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-            className="w-full overflow-hidden"
+            className="w-full overflow-hidden rounded-t-2xl transform-gpu"
           >
             <div className="relative w-full aspect-video bg-black">
               {proj.image && (
@@ -85,7 +91,7 @@ export default function CollapsibleProjectCard({ proj, index, isExpanded, onTogg
                     <Button
                       variant="secondary"
                       icon={FaLock}
-                      className="h-10 px-4 sm:px-6 shrink-0 opacity-50 cursor-not-allowed pointer-events-none"
+                      className="h-10 px-2 sm:px-4 flex-1 opacity-50 cursor-not-allowed pointer-events-none"
                       disabled
                       noShadow
                       noHover
@@ -99,7 +105,7 @@ export default function CollapsibleProjectCard({ proj, index, isExpanded, onTogg
                       rel="noopener noreferrer"
                       variant="secondary"
                       icon={FaGithub}
-                      className="h-10 px-4 sm:px-6 shrink-0"
+                      className="h-10 px-2 sm:px-4 flex-1"
                     >
                       Código
                     </Button>
@@ -111,7 +117,7 @@ export default function CollapsibleProjectCard({ proj, index, isExpanded, onTogg
                       rel="noopener noreferrer"
                       variant="primary"
                       icon={FaUpRightFromSquare}
-                      className="h-10 px-4 sm:px-6 shrink-0"
+                      className="h-10 px-2 sm:px-4 flex-1"
                     >
                       Preview
                     </Button>

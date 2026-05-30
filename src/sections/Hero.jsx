@@ -1,13 +1,16 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaWhatsapp, FaLinkedin, FaEnvelope } from 'react-icons/fa6';
 import { portfolioData } from '@/data/portfolioData';
-import Button from '@/components/Button';
-import HeroBackground from './HeroBackground';
+import { Button } from '@/components';
+import { HeroBackground } from '@/sections'; // We export it from sections now
 
-// WhatsApp acepta el número en formato internacional sin "+", espacios ni guiones.
+// Limpio el número de teléfono para que la API de WhatsApp lo reconozca correctamente,
+// eliminando espacios y el signo +.
 const whatsappNumber = portfolioData.hero.phone.replace(/\D/g, '');
 const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
+// Esta es la primera pantalla que ven los usuarios (Hero section).
+// Aquí busco generar el mayor impacto visual ("Wow factor") con un diseño rico y animaciones de fondo.
 export default function Hero() {
   return (
     <section
@@ -18,10 +21,10 @@ export default function Hero() {
 
       <div className="container relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, top: 50 }}
+          animate={{ opacity: 1, top: 0 }}
           transition={{ duration: 1, ease: 'easeOut' }}
-          className="flex flex-col lg:flex-row items-center justify-between gap-12 w-full"
+          className="flex flex-col lg:flex-row items-center justify-between gap-12 w-full relative"
         >
           {/* Texto y Contenido Principal */}
           <div className="flex flex-col items-center lg:items-start text-center lg:text-left flex-1 px-0">
@@ -103,14 +106,22 @@ export default function Hero() {
 
           {/* Imagen de Perfil */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8, x: 20 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
+            initial={{ opacity: 0, left: 20 }}
+            animate={{ opacity: 1, left: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
             className="flex-1 w-full max-w-sm lg:max-w-md relative mx-auto lg:mx-0"
           >
             <div className="relative aspect-square w-full">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-light to-blue rounded-2xl transform rotate-6 opacity-30 blur-sm scale-105"></div>
-              <div className="absolute inset-0 bg-gradient-to-tl from-blue to-transparent rounded-2xl transform -rotate-3 opacity-40 blur-sm scale-105"></div>
+              <motion.div
+                animate={{ rotate: [6, 12, 6], scale: [1.05, 1.1, 1.05] }}
+                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute inset-0 bg-gradient-to-br from-blue-light to-blue rounded-2xl opacity-30 blur-sm"
+              ></motion.div>
+              <motion.div
+                animate={{ rotate: [-3, -9, -3], scale: [1.05, 1.1, 1.05] }}
+                transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+                className="absolute inset-0 bg-gradient-to-tl from-blue to-transparent rounded-2xl opacity-40 blur-sm"
+              ></motion.div>
 
               <div className="relative w-full h-full rounded-2xl border-2 border-blue-light/30 overflow-hidden bg-background/80 backdrop-blur-sm shadow-[0_0_30px_rgba(59,130,246,0.3)] group">
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent z-10 opacity-60"></div>

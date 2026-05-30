@@ -1,16 +1,16 @@
-import { motion } from 'framer-motion';
 import { FaUpRightFromSquare, FaCalendarDays } from 'react-icons/fa6';
 import { portfolioData } from '@/data/portfolioData';
-import GlassCard from '@/components/GlassCard';
-import SectionTitle from '@/components/SectionTitle';
+import { GlassCard, SectionTitle, Reveal } from '@/components';
 
+// En esta sección detallo mi formación académica y certificaciones destacadas.
+// Decidí estructurarlo de manera clara para resaltar mi aprendizaje continuo.
 export default function Education() {
   return (
     <section className="container section" id="education">
       <div className="section-inner">
-        <div className="section-header">
+        <Reveal className="section-header">
           <SectionTitle>Formación y Certificaciones</SectionTitle>
-        </div>
+        </Reveal>
         <div className="mt-10 w-full max-w-5xl mx-auto flex flex-col gap-10">
 
           {/* Formación Académica */}
@@ -60,7 +60,7 @@ export default function Education() {
           </div>
 
           {/* Certificaciones Destacadas */}
-          <GlassCard delay={200} padding="md" className="w-full overflow-hidden group">
+          <GlassCard padding="md" className="w-full overflow-hidden group">
             <div className="mb-6 flex justify-center">
               <h3 className="text-2xl sm:text-3xl font-bold text-foreground tracking-tight text-center">
                 Certificaciones Destacadas
@@ -68,13 +68,9 @@ export default function Education() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {portfolioData.certifications.map((cert, index) => (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                <div
                   key={index}
-                  className="group/cert flex flex-col p-5 sm:p-6 rounded-2xl bg-background/50 border border-glass-border shadow-[0_1px_2px_rgba(59,130,246,0.14),0_4px_12px_rgba(59,130,246,0.10)] hover:bg-blue/14 hover:border-blue-light/45 hover:shadow-[0_0_20px_rgba(59,130,246,0.32)] hover:-translate-y-0.5 transition-all duration-300 min-h-[140px] relative z-10"
+                  className="group/cert flex flex-col p-5 sm:p-6 rounded-2xl bg-background/50 border border-glass-border shadow-[0_1px_2px_rgba(59,130,246,0.14),0_4px_12px_rgba(59,130,246,0.10)] hover:bg-blue/14 hover:border-blue-light/45 hover:shadow-[0_0_20px_rgba(59,130,246,0.32)] transition-all duration-300 min-h-[140px] relative z-10"
                 >
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
                     <div>
@@ -98,7 +94,7 @@ export default function Education() {
                       )}
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </GlassCard>

@@ -1,4 +1,8 @@
+// Aquí centralizo toda la información de mi portafolio (textos, links, proyectos, etc.).
+// Decidí hacerlo así para que si el día de mañana necesito actualizar mi experiencia o cambiar un texto, 
+// solo deba modificar este archivo en lugar de buscar por todos los componentes de React.
 export const portfolioData = {
+  // Datos principales de la sección Hero (la pantalla inicial).
   hero: {
     name: "Luis Andrés Melita Cruces",
     title: "Ingeniero Civil Industrial & Desarrollador Full Stack",
@@ -15,26 +19,6 @@ export const portfolioData = {
     cvUrl: "/documents/cv.pdf"
   },
   about: "Soy un Ingeniero Civil Industrial y Desarrollador Full Stack impulsado por la intersección entre la optimización de procesos, el análisis de datos y la creación de soluciones tecnológicas. Me especializo en diseñar e implementar plataformas web integrales, conectando una sólida infraestructura en el back-end con interfaces front-end modernas y funcionales. Mi enfoque combina la visión analítica y estratégica de la ingeniería con la capacidad técnica para materializar herramientas digitales que mejoran la eficiencia operativa y la toma de decisiones. Destaco por mi proactividad, adaptabilidad y una mentalidad orientada a la mejora continua y al desarrollo de productos de alto impacto.",
-  experience: [
-    {
-      role: "Full Stack Developer",
-      company: "ValueDev SpA",
-      year: "2025",
-      description: "Desarrollé plataformas web integrales orientadas a la digitalización de procesos empresariales y gestión de contenido. Implementé interfaces modernas integradas con bases de datos SQL y configuré servicios de hosting y dominio."
-    },
-    {
-      role: "Asistente de Investigación y Gestión de Proyectos",
-      company: "Universidad de Concepción",
-      year: "2024",
-      description: "Participé en proyectos Fondecyt enfocados en la seguridad y optimización de Modelos de Lenguaje de Gran Tamaño (LLMs). Apliqué técnicas de Fine-Tuning y RAG para mejorar la precisión y robustez de sistemas conversacionales en la resolución de problemas matemáticos y entornos operativos."
-    },
-    {
-      role: "Analista de Negocios",
-      company: "IncubaUdeC",
-      year: "2023",
-      description: "Desarrollé un estudio de mercado y análisis financiero para la start-up Exovet, definiendo oportunidades de crecimiento y rentabilidad estructural."
-    }
-  ],
   education: [
     {
       degree: "Ingeniero Civil Industrial",
@@ -142,24 +126,6 @@ export const portfolioData = {
       githubUrl: "private",
       description: "Desarrollo e implementación del sitio web institucional para la empresa de soluciones tecnológicas ValueDev SpA. Diseñé e implementé una interfaz responsiva y de alto rendimiento, optimizando tiempos de carga y SEO, además de estructurar componentes modulares y reutilizables.",
       techStack: ["Vite", "React", "Tailwind"]
-    },
-    {
-      title: "Plataforma E-commerce | Ejemplo",
-      category: "Full Stack Development",
-      image: "",
-      liveUrl: "https://mc.dhreian.com",
-      githubUrl: "https://github.com/",
-      description: "Proyecto de ejemplo de una plataforma de comercio electrónico completamente funcional. Cuenta con catálogo de productos, carrito de compras, integración de pagos y panel de administración.",
-      techStack: ["Next.js", "Node.js", "PostgreSQL", "Tailwind"]
-    },
-    {
-      title: "Dashboard Analítico | Ejemplo",
-      category: "Data Science & Web",
-      image: "",
-      liveUrl: "https://mc.dhreian.com",
-      githubUrl: "https://github.com/",
-      description: "Ejemplo de dashboard interactivo para análisis de métricas empresariales (KPIs). Integra visualizaciones dinámicas de datos de ventas y proyecciones de crecimiento.",
-      techStack: ["Python", "React", "SQL"]
     }
   ],
   otherProjects: [
@@ -180,15 +146,32 @@ export const portfolioData = {
       githubUrl: "https://github.com/melitacruces/dhreian-setup",
       description: "Panel full-stack minimalista (Next.js, PostgreSQL) para gestionar y exhibir equipamiento de estudio. Actúa simultáneamente como vitrina pública y CMS privado, destacando por su diseño brutalista y alto rendimiento.",
       techStack: ["Next.js", "React", "Tailwind", "Neon DB", "PostgreSQL"]
+    }
+  ],
+  experience: [
+    {
+      role: "Full Stack Developer",
+      company: "ValueDev SpA",
+      year: "2025 - Presente",
+      description: "Desarrollé de forma integral plataformas web orientadas a la digitalización de procesos empresariales. Mi labor abarcó desde la creación de interfaces front-end responsivas (HTML, CSS, JavaScript) y la implementación de arquitectura back-end con bases de datos SQL, pasando por la gestión de la infraestructura de dominio y hosting, hasta el diseño de paneles administrativos personalizados. Además, integré principios de ingeniería industrial para optimizar flujos de trabajo mediante KPIs, logrando combinar una sólida ejecución técnica con una visión analítica enfocada en la eficiencia operativa y la experiencia del usuario final."
     },
     {
-      title: "App de Gestión de Tareas | Ejemplo",
-      category: "Web App",
-      image: "",
-      liveUrl: "https://mc.dhreian.com",
-      githubUrl: "https://github.com/",
-      description: "Aplicación de lista de tareas con funcionalidades de arrastrar y soltar, categorización y modo oscuro. Proyecto de demostración de manejo de estados complejos y almacenamiento local.",
-      techStack: ["React", "JavaScript", "CSS Vanilla"]
+      role: "Assistant Project Manager",
+      company: "Universidad de Concepción",
+      year: "2024",
+      description: "Como parte de un proyecto Fondecyt (IDEALab), participé en el desarrollo y ejecución de estrategias de fine-tuning para Modelos de Lenguaje de Gran Tamaño (LLMs) aplicados a la resolución de problemas matemáticos. Mi labor integral abarcó desde liderar la evaluación y selección de modelos en base a sus capacidades de razonamiento, pasando por la recopilación y procesamiento de datasets especializados, hasta el entrenamiento y validación final, logrando optimizar el desempeño de los modelos con mejoras significativas en la precisión y relevancia de sus respuestas."
+    },
+    {
+      role: "Research Assistant",
+      company: "Centro de Datos e Inteligencia Artificial, UdeC",
+      year: "2024",
+      description: "Formé parte de un equipo especializado en la seguridad de Modelos de Lenguaje de Gran Tamaño (LLM Security). Mi labor abarcó desde el diseño y desarrollo de mecanismos de evaluación para medir el desempeño de chatbots en entornos operativos reales, hasta la implementación técnica de Retrieval-Augmented Generation (RAG) y Fine-Tuning. Esto permitió mejorar de manera directa la precisión, seguridad y robustez de los modelos, culminando en la entrega y documentación de recomendaciones técnicas para optimizar el comportamiento de sistemas conversacionales basados en IA."
+    },
+    {
+      role: "Programa de Vinculación Estudiante-Empresa",
+      company: "IncubaUdeC",
+      year: "2023",
+      description: "Colaboré estrechamente con la start-up Exovet en la identificación y propuesta de mejoras para su modelo de negocio. Mi labor abarcó desde la ejecución de un estudio de mercado y análisis financiero para definir claras oportunidades de crecimiento, posicionamiento y rentabilidad, hasta la elaboración de un informe de evaluación económica y legal. Este trabajo integral proporcionó los insumos fundamentales para respaldar la toma de decisiones estratégicas de la empresa."
     }
   ]
 };

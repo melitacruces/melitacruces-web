@@ -4,7 +4,10 @@ import {
 } from 'react-icons/fa6';
 import { SiPytorch, SiHuggingface, SiTailwindcss, SiNextdotjs, SiVite, SiPostgresql } from 'react-icons/si';
 
+// Este componente me ayuda a renderizar pequeñas "etiquetas" con las tecnologías que uso.
+// Mapea el nombre de la tecnología con su icono y colores respectivos.
 export default function TechBadge({ tech }) {
+  // Aquí mantengo un diccionario con los colores oficiales de cada herramienta para que se vean auténticas.
   const tMap = {
     "Vite": { icon: SiVite, color: "#646CFF", bg: "rgba(100, 108, 255, 0.1)" },
     "React": { icon: FaReact, color: "#61DAFB", bg: "rgba(97, 218, 251, 0.1)" },

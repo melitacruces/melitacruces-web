@@ -2,15 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 
+  Este es mi archivo principal de estilos.
+  Decidí usar Tailwind CSS para la mayor parte del diseño, pero aquí defino 
+  algunas clases personalizadas para lograr efectos visuales específicos que 
+  Tailwind no cubre fácilmente por defecto.
+*/
+
 :root {
+  /* Configuro la fuente principal del portafolio. Montserrat me parece elegante y profesional. */
   --font-montserrat: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 html {
+  /* Agrego scroll suave para que la navegación entre secciones sea más agradable. */
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 }
 
+/* Con esto aseguro que al hacer click en un enlace del menú, la sección no quede tapada por el Header flotante. */
 [id] {
   scroll-margin-top: 100px;
 }
@@ -19,28 +29,59 @@ html {
   body {
     @apply bg-background text-foreground antialiased min-h-screen relative overflow-x-hidden;
   }
+
+  @media (pointer: fine) {
+    *, *::before, *::after {
+      cursor: none !important;
+    }
+    input, textarea, select {
+      cursor: auto !important;
+    }
+  }
+
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.3);
+    color: inherit;
+    text-shadow: none;
+  }
+  ::-moz-selection {
+    background-color: rgba(59, 130, 246, 0.3);
+    color: inherit;
+    text-shadow: none;
+  }
 }
 
 /* Base Utility Classes para Liquid Glass */
 @layer components {
   .glass-panel {
+    position: relative;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.18), 0 14px 36px rgba(59, 130, 246, 0.14);
+    /* Solo transiciono box-shadow aquí. El transform lo controla .reveal
+       durante la animación de entrada; si ambos transicionan transform
+       a distinto ritmo, se produce un salto brusco al final. */
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glass-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
     background: theme('colors.glass.bg');
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid theme('colors.glass.border');
-    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.18), 0 14px 36px rgba(59, 130, 246, 0.14);
-    border-radius: 16px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    transform: translateZ(0);
+    box-shadow: inset 0 0 0 1px theme('colors.glass.border');
+    z-index: -1;
+    pointer-events: none;
   }
 
   .card-hover-glow {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: box-shadow 0.3s ease;
   }
-
+  
   .card-hover-glow:hover {
-    border-color: rgba(59, 130, 246, 0.45);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.42), 0 0 22px rgba(59, 130, 246, 0.2);
+    box-shadow: inset 0 0 0 1px rgba(59, 130, 246, 0.45), 0 10px 24px rgba(0, 0, 0, 0.42), 0 0 22px rgba(59, 130, 246, 0.2);
   }
 
   .section-title {
@@ -104,8 +145,7 @@ body.hovering-card #cursor-flare {
   left: 8%;
   width: 42vw;
   height: 42vw;
-  background: rgba(59, 130, 246, 0.32); /* blue, más intenso */
-  filter: blur(120px);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.32) 0%, rgba(59, 130, 246, 0) 70%);
   animation: orb-float-1 14s ease-in-out infinite;
 }
 
@@ -114,8 +154,7 @@ body.hovering-card #cursor-flare {
   right: 3%;
   width: 52vw;
   height: 52vw;
-  background: rgba(59, 130, 246, 0.36); /* blue, más intenso */
-  filter: blur(140px);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.36) 0%, rgba(59, 130, 246, 0) 70%);
   animation: orb-float-2 17s ease-in-out infinite;
   animation-delay: -3s;
 }
@@ -125,8 +164,7 @@ body.hovering-card #cursor-flare {
   left: 58%;
   width: 32vw;
   height: 32vw;
-  background: rgba(147, 197, 253, 0.18); /* blue-light, más intenso */
-  filter: blur(90px);
+  background: radial-gradient(circle, rgba(147, 197, 253, 0.18) 0%, rgba(147, 197, 253, 0) 70%);
   animation: orb-float-3 11s ease-in-out infinite;
   animation-delay: -5s;
 }
@@ -137,8 +175,7 @@ body.hovering-card #cursor-flare {
   left: 18%;
   width: 22vw;
   height: 22vw;
-  background: rgba(147, 197, 253, 0.28); /* blue-300 brillante */
-  filter: blur(80px);
+  background: radial-gradient(circle, rgba(147, 197, 253, 0.28) 0%, rgba(147, 197, 253, 0) 70%);
   animation: orb-float-4 9s ease-in-out infinite;
   animation-delay: -2s;
 }
@@ -205,4 +242,41 @@ body.hovering-card #cursor-flare {
 }
 ::-webkit-scrollbar-thumb {
   @apply bg-blue rounded hover:bg-blue transition-colors;
+}
+
+/* ============================================================
+   Scroll reveal — aparición uniforme de los elementos al hacer
+   scroll (toda la lógica de disparo está en useReveal.js).
+   - Una sola transición por elemento: nada de animaciones
+     anidadas que se sumen (velocidad despareja) o multipliquen
+     opacidades (parpadeo).
+   - Curva ease-out (rápida al entrar, suave al asentar): se
+     siente ágil y constante, no "lento y luego rápido".
+   - El will-change lo pone/quita el JS solo durante la
+     animación, así no dejo capas promovidas para siempre.
+   Va al final del archivo a propósito para ganar en orden de
+   cascada sobre `.glass-panel` (misma especificidad).
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  position: relative;
+  top: 24px;
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    top 0.6s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    box-shadow 0.3s ease;
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  top: 0px;
+}
+
+/* Accesibilidad: sin movimiento, el contenido se muestra al instante. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    top: 0px;
+    transition: none;
+  }
 }

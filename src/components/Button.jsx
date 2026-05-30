@@ -1,3 +1,5 @@
+// Este componente Button lo diseñé para ser altamente reutilizable en todo el portafolio.
+// Me permite tener distintos "variantes" (primario, secundario, ícono, etc.) manteniendo consistencia.
 export default function Button({
   children,
   href,
@@ -13,11 +15,17 @@ export default function Button({
   noHover = false,
   ...rest
 }) {
+  // Aquí defino las clases base de Tailwind que todos los botones compartirán,
+  // como las transiciones suaves y los bordes enfocados (accessibility).
   const baseClasses =
-    'rounded-2xl transition-all duration-300 inline-flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-light/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background';
+    'rounded-2xl transition duration-300 inline-flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-light/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background will-change-transform';
+  
+  // Utilizo variables auxiliares para controlar si quiero o no mostrar sombras y efectos hover en casos especiales.
   const sharedShadow = noShadow ? '' : 'shadow-[0_1px_2px_rgba(59,130,246,0.14),0_4px_12px_rgba(59,130,246,0.10)]';
   const sharedHover = noHover ? '' : 'hover:border-blue-light/45 hover:shadow-[0_0_20px_rgba(59,130,246,0.32)]';
 
+  // Configuro un diccionario de variantes para cambiar rápidamente el estilo del botón
+  // dependiendo de dónde lo necesite usar (ej. un botón principal vs uno más compacto).
   const variants = {
     primary: `h-12 px-8 bg-blue/20 border border-blue-light/30 ${noHover ? '' : 'hover:bg-blue/40'} text-white text-sm sm:text-base font-semibold tracking-wide backdrop-blur-xl ${sharedShadow} ${sharedHover}`,
     secondary: `h-12 px-8 bg-background/50 border border-glass-border ${noHover ? '' : 'hover:bg-blue/14'} text-foreground/90 text-sm sm:text-base font-semibold tracking-wide backdrop-blur-xl ${sharedShadow} ${sharedHover}`,
@@ -27,6 +35,7 @@ export default function Button({
     iconText: `h-12 px-4 bg-background/50 border border-glass-border ${noHover ? '' : 'hover:bg-blue/18'} text-foreground/80 ${noHover ? '' : 'hover:text-blue-light'} ${sharedShadow} ${sharedHover} min-w-0`,
   };
 
+  // Construyo la clase final uniendo todo lo anterior.
   const widthClass = fullWidth && (variant === 'primary' || variant === 'secondary') ? 'w-full' : '';
   const finalClassName = `${baseClasses} ${variants[variant] || variants.primary} ${widthClass} ${className}`;
 

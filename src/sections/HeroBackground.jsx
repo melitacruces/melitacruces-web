@@ -1,9 +1,9 @@
 /**
- * Fondo del Hero: orbes animados con CSS @keyframes (no Framer Motion).
- * Las animaciones corren en el compositor del navegador, no consumen
- * tiempo de JS por frame.
+ * Fondo del Hero: Diseñé orbes animados con CSS (@keyframes) en lugar de usar Framer Motion.
+ * Tomé esta decisión para mejorar el rendimiento; las animaciones de CSS corren nativamente 
+ * en la GPU del navegador, evitando tirones al hacer scroll en móviles.
  *
- * Los @keyframes orb-float-{1,2,3} viven en src/index.css.
+ * Los @keyframes orb-float-{1,2,3} viven en src/index.css para mantener este archivo limpio.
  */
 export default function HeroBackground() {
   return (
