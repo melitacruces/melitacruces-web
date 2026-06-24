@@ -1,0 +1,9 @@
+# robots.txt para el portafolio
+# Aquí le indico a los motores de búsqueda (como Google) qué pueden indexar y qué no.
+# Permitimos que todo el sitio sea indexado para mejorar la visibilidad profesional.
+
+User-agent: *
+Allow: /
+
+# Descomentar e indicar la ruta del sitemap una vez que se aloje el sitio definitivamente.
+# Sitemap: https://melitacruces.com/sitemap.xml
