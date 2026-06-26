@@ -3,8 +3,9 @@ import {
   FaDatabase, FaCloudflare, FaFileExcel, FaBrain, FaRobot,
   FaChartBar, FaChartLine, FaLayerGroup, FaCode,
 } from 'react-icons/fa6';
-import { SiTailwindcss, SiNextdotjs, SiPhp, SiMysql, SiPostgresql, SiSupabase, SiAutocad } from 'react-icons/si';
+import { SiTailwindcss, SiNextdotjs, SiPhp, SiMysql, SiPostgresql, SiSupabase, SiAutocad, SiArduino, SiCplusplus } from 'react-icons/si';
 import { portfolioData } from '@/data/portfolioData';
+import { techColors, FALLBACK_TECH_COLOR } from '@/data/techColors';
 import { Panel, SectionTitle } from '@/components';
 
 const ResendIcon = (props) => (
@@ -12,30 +13,34 @@ const ResendIcon = (props) => (
 );
 
 
+// Solo el componente del ícono por tecnología; el color vive en techColors
+// (fuente única compartida con las insignias de proyectos).
 const skillIcons = {
-  html: { component: FaHtml5, color: 'text-[#E34F26]' },
-  css: { component: FaCss, color: 'text-[#1572B6]' },
-  tailwind: { component: SiTailwindcss, color: 'text-[#06B6D4]' },
-  js: { component: FaJs, color: 'text-[#F7DF1E]' },
-  react: { component: FaReact, color: 'text-[#61DAFB]' },
-  nextjs: { component: SiNextdotjs, color: 'text-foreground' },
-  nodejs: { component: FaNodeJs, color: 'text-[#339933]' },
-  php: { component: SiPhp, color: 'text-[#777BB4]' },
-  python: { component: FaPython, color: 'text-[#3776AB]' },
-  git: { component: FaGitAlt, color: 'text-[#F05032]' },
-  mysql: { component: SiMysql, color: 'text-[#4479A1]' },
-  postgresql: { component: SiPostgresql, color: 'text-[#336791]' },
-  supabase: { component: SiSupabase, color: 'text-[#3ECF8E]' },
-  sql: { component: FaDatabase, color: 'text-[#CC2927]' },
-  cloudflare: { component: FaCloudflare, color: 'text-[#F38020]' },
-  resend: { component: ResendIcon, color: 'text-foreground' },
-  ml: { component: FaBrain, color: 'text-[#EE4C2C]' },
-  ai: { component: FaRobot, color: 'text-[#FFD21E]' },
-  powerbi: { component: FaChartBar, color: 'text-[#F2C811]' },
-  excel: { component: FaFileExcel, color: 'text-[#217346]' },
-  autocad: { component: SiAutocad, color: 'text-[#DF222A]' },
-  management: { component: FaChartLine, color: 'text-blue-light' },
-  inventory: { component: FaLayerGroup, color: 'text-blue-light' },
+  html: FaHtml5,
+  css: FaCss,
+  tailwind: SiTailwindcss,
+  js: FaJs,
+  react: FaReact,
+  nextjs: SiNextdotjs,
+  nodejs: FaNodeJs,
+  php: SiPhp,
+  python: FaPython,
+  git: FaGitAlt,
+  mysql: SiMysql,
+  postgresql: SiPostgresql,
+  supabase: SiSupabase,
+  sql: FaDatabase,
+  cloudflare: FaCloudflare,
+  resend: ResendIcon,
+  ml: FaBrain,
+  ai: FaRobot,
+  powerbi: FaChartBar,
+  excel: FaFileExcel,
+  arduino: SiArduino,
+  cpp: SiCplusplus,
+  autocad: SiAutocad,
+  management: FaChartLine,
+  inventory: FaLayerGroup,
 };
 
 export default function Skills() {
@@ -69,8 +74,8 @@ export default function Skills() {
                   </h4>
                   <div className="flex flex-wrap justify-center gap-2.5">
                     {categoryGroup.items.map((skill, index) => {
-                      const skillData = skillIcons[skill.iconKey] || { component: FaCode, color: 'text-foreground' };
-                      const Icon = skillData.component;
+                      const Icon = skillIcons[skill.iconKey] || FaCode;
+                      const iconColor = techColors[skill.iconKey] || FALLBACK_TECH_COLOR;
                       return (
                         <div
                           key={index}
@@ -78,7 +83,8 @@ export default function Skills() {
                         >
                           {Icon && (
                             <Icon
-                              className={`text-lg ${skillData.color}`}
+                              className="text-lg"
+                              style={{ color: iconColor }}
                             />
                           )}
                           <span className="text-sm font-semibold tracking-wide text-foreground/90 transition-colors">

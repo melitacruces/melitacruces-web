@@ -65,6 +65,7 @@ export const portfolioData = {
       {
         category: "Back End & Bases de Datos",
         items: [
+          { name: "C++", iconKey: "cpp" },
           { name: "MySQL", iconKey: "mysql" },
           { name: "Node.js", iconKey: "nodejs" },
           { name: "PHP", iconKey: "php" },
@@ -94,6 +95,7 @@ export const portfolioData = {
       {
         category: "Herramientas & Ecosistema",
         items: [
+          { name: "Arduino", iconKey: "arduino" },
           { name: "Cloudflare", iconKey: "cloudflare" },
           { name: "Git", iconKey: "git" },
           { name: "Resend", iconKey: "resend" }
@@ -126,6 +128,15 @@ export const portfolioData = {
       githubUrl: "private",
       description: "Desarrollo de plataforma web full-stack para artista musical. Diseñé e implementé una interfaz front-end responsiva de alto rendimiento, integrada a un back-end que emplea la API de Resend para gestionar correos transaccionales automatizados con plantillas dinámicas.",
       techStack: ["React", "Resend", "Tailwind", "Vite"]
+    },
+    {
+      title: "Control de Acceso Biométrico con Arduino",
+      category: "IoT & Embedded Systems",
+      image: "/images/arduino-biometric.png",
+      liveUrl: "https://youtube.com/watch?v=JEN6ze8029M",
+      githubUrl: "https://github.com/melitacruces/arduino-biometric-access",
+      description: "Sistema de control de acceso de doble factor que combina hardware Arduino con una aplicación de escritorio en Python. Diseñé e implementé la autenticación por huella dactilar y PIN, gestionando los datos de los usuarios en una base de datos MySQL mediante comunicación serial entre el firmware y la interfaz.",
+      techStack: ["Arduino", "C++", "MySQL", "Python"]
     }
   ],
   otherProjects: [
