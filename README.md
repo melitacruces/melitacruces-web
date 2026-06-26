@@ -49,9 +49,9 @@ Este proyecto es mi portafolio digital profesional, diseñado para centralizar e
 
 ### Frontend (Interfaz de Usuario)
 
-- **Core:** HTML5, CSS3, JavaScript (ES6+), React 19, Vite 8
-- **Estilos:** Tailwind CSS 3
-- **Otras librerías:** Framer Motion 12 (animaciones), React Icons 5 (iconografía de las familias Font Awesome 6 y Simple Icons)
+- **Core:** HTML5, CSS3, JavaScript (ES6+), React 19, Vite 8.
+- **Estilos:** Tailwind CSS 3.
+- **Otras librerías:** Framer Motion 12 (animaciones), React Icons 5 (iconografía de las familias Font Awesome 6 y Simple Icons).
 
 ---
 
@@ -61,17 +61,17 @@ El portafolio implementa un estilo visual moderno, caracterizado por un fondo os
 
 ### Paleta de Colores
 
-| Color             | Hexadecimal | Uso principal                                                                                |
-| :---------------- | :---------- | :------------------------------------------------------------------------------------------- |
-| **Primario**      | `#080808`   | Color de fondo principal de la aplicación (`bg-background`)                                  |
-| **Secundario**    | `#3b82f6`   | Acentos visuales, bordes interactivos, sombras y scrollbar (`bg-blue`, `text-blue`)          |
-| **Acento/Alerta** | `#93c5fd`   | Color azul brillante en gradientes de títulos y orbes flotantes de fondo (`text-blue-light`) |
-| **Texto Base**    | `#f3f4f6`   | Texto principal de párrafos y elementos de lectura (`text-foreground`)                       |
+| Color             | Hexadecimal | Uso principal                                                                                 |
+| :---------------- | :---------- | :-------------------------------------------------------------------------------------------- |
+| **Primario**      | `#080808`   | Color de fondo principal de la aplicación (`bg-background`).                                  |
+| **Secundario**    | `#3b82f6`   | Acentos visuales, bordes interactivos, sombras y scrollbar (`bg-blue`, `text-blue`).          |
+| **Acento/Alerta** | `#93c5fd`   | Color azul brillante en gradientes de títulos y orbes flotantes de fondo (`text-blue-light`). |
+| **Texto Base**    | `#f3f4f6`   | Texto principal de párrafos y elementos de lectura (`text-foreground`).                       |
 
 ### Tipografía
 
-- **Títulos:** Montserrat (via `--font-montserrat` y Tailwind `fontFamily.sans`)
-- **Cuerpo de texto:** Montserrat
+- **Títulos:** Montserrat (via `--font-montserrat` y Tailwind `fontFamily.sans`).
+- **Cuerpo de texto:** Montserrat.
 
 ---
 
@@ -79,28 +79,28 @@ El portafolio implementa un estilo visual moderno, caracterizado por un fondo os
 
 ```text
 📂 melitacruces-web
- ┣ 📂 public                   # Archivos estáticos
- ┃ ┣ 📂 certificates           # Certificados en formato PDF
- ┃ ┣ 📂 documents              # Documento del Currículum Vitae (cv.pdf)
- ┃ ┗ 📂 images                 # Imágenes de proyectos y fotografía de perfil
- ┣ 📂 scripts                  # Scripts de automatización
- ┃ ┣ 📜 fix-pdf-metadata.cjs   # Script para corregir metadatos de archivos PDF
- ┃ ┗ 📜 optimize-images.cjs    # Script para optimizar y comprimir imágenes (sharp)
- ┣ 📂 src                      # Código fuente principal
- ┃ ┣ 📂 components             # Componentes de interfaz reutilizables (Button, Panel, etc.)
- ┃ ┣ 📂 data                   # Archivo central de datos del portafolio (portfolioData.js)
- ┃ ┣ 📂 layout                 # Estructura principal del sitio (Header, Footer)
- ┃ ┣ 📂 sections               # Secciones de la página de portafolio (Hero, About, Skills, etc.)
- ┃ ┣ 📜 App.jsx                # Componente raíz del portafolio
- ┃ ┣ 📜 index.css              # Directivas de Tailwind CSS, variables de diseño y clases utilitarias
- ┃ ┗ 📜 main.jsx               # Punto de entrada de Vite y montaje de React
- ┣ 📜 eslint.config.mjs        # Configuración de ESLint 10 para código fuente y scripts
- ┣ 📜 index.html               # Plantilla HTML base y configuración de fuentes/metatags SEO
- ┣ 📜 jsconfig.json            # Configuración de alias de ruta y JS para el editor
- ┣ 📜 package.json             # Gestión de dependencias y scripts de ejecución
- ┣ 📜 postcss.config.cjs       # Configuración de PostCSS para procesar Tailwind
- ┣ 📜 tailwind.config.cjs      # Configuración del tema de Tailwind (colores y tipografía)
- ┗ 📜 vite.config.js           # Configuración del empaquetador Vite (con alias @)
+ ┣ 📂 public                   # Archivos estáticos.
+ ┃ ┣ 📂 certificates           # Certificados en formato PDF.
+ ┃ ┣ 📂 documents              # Documento del Currículum Vitae (cv.pdf).
+ ┃ ┗ 📂 images                 # Imágenes de proyectos y fotografía de perfil.
+ ┣ 📂 scripts                  # Scripts de automatización.
+ ┃ ┣ 📜 fix-pdf-metadata.cjs   # Script para corregir metadatos de archivos PDF.
+ ┃ ┗ 📜 optimize-images.cjs    # Script para optimizar y comprimir imágenes (sharp).
+ ┣ 📂 src                      # Código fuente principal.
+ ┃ ┣ 📂 components             # Componentes de interfaz reutilizables (Button, Panel, etc.).
+ ┃ ┣ 📂 data                   # Archivo central de datos del portafolio (portfolioData.js).
+ ┃ ┣ 📂 layout                 # Estructura principal del sitio (Header, Footer).
+ ┃ ┣ 📂 sections               # Secciones de la página de portafolio (Hero, About, Skills, etc.).
+ ┃ ┣ 📜 App.jsx                # Componente raíz del portafolio.
+ ┃ ┣ 📜 index.css              # Directivas de Tailwind CSS, variables de diseño y clases utilitarias.
+ ┃ ┗ 📜 main.jsx               # Punto de entrada de Vite y montaje de React.
+ ┣ 📜 eslint.config.mjs        # Configuración de ESLint 10 para código fuente y scripts.
+ ┣ 📜 index.html               # Plantilla HTML base y configuración de fuentes/metatags SEO.
+ ┣ 📜 jsconfig.json            # Configuración de alias de ruta y JS para el editor.
+ ┣ 📜 package.json             # Gestión de dependencias y scripts de ejecución.
+ ┣ 📜 postcss.config.cjs       # Configuración de PostCSS para procesar Tailwind.
+ ┣ 📜 tailwind.config.cjs      # Configuración del tema de Tailwind (colores y tipografía).
+ ┗ 📜 vite.config.js           # Configuración del empaquetador Vite (con alias @).
 ```
 
 ---
@@ -111,8 +111,8 @@ El portafolio implementa un estilo visual moderno, caracterizado por un fondo os
 
 Asegúrate de tener instalados los siguientes componentes en tu máquina:
 
-- **Node.js** (versión 20 o superior, requerida por Vite 8)
-- **npm** (incluido por defecto con Node.js)
+- **Node.js** (versión 20 o superior, requerida por Vite 8).
+- **npm** (incluido por defecto con Node.js).
 
 ### Instalación
 
