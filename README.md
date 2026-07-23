@@ -2,7 +2,7 @@
 
 Sitio web de portafolio profesional desarrollado como una aplicación frontend de una sola página. Presenta experiencia, formación, habilidades y proyectos mediante una interfaz responsiva, animada y orientada al rendimiento.
 
-[Visitar el sitio web](https://melitacruces.com)
+[Preview](https://melitacruces.com)
 
 ## Tecnologías
 
@@ -76,13 +76,13 @@ El servidor de desarrollo estará disponible en `http://localhost:5173`.
 
 ## Comandos
 
-| Comando | Descripción |
-| --- | --- |
-| `npm run dev` | Inicia el servidor de desarrollo. |
-| `npm run build` | Genera la compilación de producción en `dist/`. |
-| `npm run preview` | Previsualiza localmente la compilación de producción. |
-| `npm run lint` | Analiza el código JavaScript y JSX con ESLint. |
-| `npm run optimize-images` | Optimiza las imágenes compatibles de `public/images/`. |
+| Comando                    | Descripción                                             |
+| -------------------------- | ------------------------------------------------------- |
+| `npm run dev`              | Inicia el servidor de desarrollo.                       |
+| `npm run build`            | Genera la compilación de producción en `dist/`.         |
+| `npm run preview`          | Previsualiza localmente la compilación de producción.   |
+| `npm run lint`             | Analiza el código JavaScript y JSX con ESLint.          |
+| `npm run optimize-images`  | Optimiza las imágenes compatibles de `public/images/`.  |
 | `npm run fix-pdf-metadata` | Normaliza los metadatos de los documentos configurados. |
 
 ## Despliegue
