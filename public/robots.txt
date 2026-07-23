@@ -1,0 +1,6 @@
+# robots.txt para el portafolio profesional.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://melitacruces.com/sitemap.xml

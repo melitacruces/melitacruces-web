@@ -1,0 +1,19 @@
+# Estas rutas contienen dependencias instaladas.
+/node_modules/
+
+# Esta ruta contiene la compilación generada.
+/dist/
+
+# Estos patrones corresponden a variables de entorno locales.
+.env*
+
+# Estas rutas contienen configuraciones locales del editor y otras herramientas.
+.vscode/
+
+# Estos archivos son generados por el sistema operativo.
+.DS_Store
+Thumbs.db
+
+# Estos patrones corresponden a registros de ejecución.
+npm-debug.log*
+*.log

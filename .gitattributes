@@ -1,0 +1,2 @@
+# Git detecta los archivos de texto y normaliza sus saltos de línea a LF.
+* text=auto eol=lf
