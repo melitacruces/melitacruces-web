@@ -1,6 +1,6 @@
 # Portafolio de Luis Melita
 
-Sitio web de portafolio profesional desarrollado como una aplicación frontend de una sola página. Presenta experiencia, formación, habilidades y proyectos mediante una interfaz responsiva, animada y orientada al rendimiento.
+Sitio web de portafolio profesional desarrollado como una aplicación front-end de una sola página. Presenta experiencia, formación, habilidades y proyectos mediante una interfaz responsiva, animada y orientada al rendimiento.
 
 [Preview](https://melitacruces.com)
 
