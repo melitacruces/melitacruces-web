@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+>
+  <url>
+    <loc>https://melitacruces.com/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <image:image>
+      <image:loc>https://melitacruces.com/images/profile.jpg</image:loc>
+      <image:title>Retrato profesional de Luis Andrés Melita Cruces</image:title>
+      <image:caption>Luis Andrés Melita Cruces, Ingeniero Civil Industrial y Desarrollador Full Stack en Chile</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://melitacruces.com/images/aurolab.png</image:loc>
+      <image:title>auroLab | Herramientas de Producción Musical</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://melitacruces.com/images/arduino-biometric.png</image:loc>
+      <image:title>Control de Acceso Biométrico con Arduino</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://melitacruces.com/images/valuedev.png</image:loc>
+      <image:title>Landing Page Corporativa ValueDev</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://melitacruces.com/images/setup.png</image:loc>
+      <image:title>MiSetup | Panel de Inventario Personal</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://melitacruces.com/images/dhreian.png</image:loc>
+      <image:title>Plataforma Artística y Portafolio Musical</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://melitacruces.com/documents/cv.pdf</loc>
+    <lastmod>2026-07-23</lastmod>
+  </url>
+</urlset>
