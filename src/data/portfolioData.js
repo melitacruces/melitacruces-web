@@ -126,7 +126,7 @@ export const portfolioData = {
       techStack: ["Arduino", "C++", "MySQL", "Python"]
     },
     {
-      title: "Landing Page Corporativa (ValueDev)",
+      title: "ValueDev | Landing Page Corporativa",
       category: "Desarrollo Front-End",
       image: "/images/valuedev.png",
       liveUrl: "https://valuedev-web.vercel.app/",
@@ -146,7 +146,7 @@ export const portfolioData = {
       techStack: ["Next.js", "React", "Tailwind CSS", "PostgreSQL"]
     },
     {
-      title: "Plataforma Artística y Portafolio Musical",
+      title: "dhreian | Plataforma Artística y Portafolio Musical",
       category: "Desarrollo Full Stack",
       image: "/images/dhreian.png",
       liveUrl: "https://dhreian.com",
