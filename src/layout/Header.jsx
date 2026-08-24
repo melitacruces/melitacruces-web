@@ -20,7 +20,7 @@ export default function Header() {
   const spotlightBackground = useMotionTemplate`
     radial-gradient(
       700px circle at ${mouseX}px ${mouseY}px,
-      rgba(59, 130, 246, 0.25),
+      rgba(255, 255, 255, 0.12),
       transparent 80%
     )
   `;
@@ -64,37 +64,37 @@ export default function Header() {
       <a
         href="/"
         onClick={handleNavClick('/')}
-        className="group/logo text-xl sm:text-2xl font-bold tracking-tighter hover:text-blue-light transition-colors flex items-center gap-2 z-10 relative"
+        className="group/logo text-xl sm:text-2xl font-bold tracking-tighter hover:text-white transition-colors flex items-center gap-2 z-10 relative"
       >
-        <FaUserTie className="text-[1em] text-blue transition-colors group-hover/logo:text-blue-light" />
+        <FaUserTie className="text-[1em] text-accent transition-colors group-hover/logo:text-white" />
         <span>MC</span>
       </a>
 
       <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gap-6 text-sm lg:text-base font-medium text-foreground/80 pointer-events-auto whitespace-nowrap">
-        <a href="/#about" onClick={handleNavClick('/about')} className="hover:text-blue transition-colors">
+        <a href="/#about" onClick={handleNavClick('/about')} className="hover:text-white transition-colors">
           Sobre Mí
         </a>
         <a
           href="/#education"
           onClick={handleNavClick('/education')}
-          className="hover:text-blue transition-colors"
+          className="hover:text-white transition-colors"
         >
           Formación
         </a>
-        <a href="/#skills" onClick={handleNavClick('/skills')} className="hover:text-blue transition-colors">
+        <a href="/#skills" onClick={handleNavClick('/skills')} className="hover:text-white transition-colors">
           Habilidades
         </a>
         <a
           href="/#projects"
           onClick={handleNavClick('/projects')}
-          className="hover:text-blue transition-colors"
+          className="hover:text-white transition-colors"
         >
           Proyectos
         </a>
         <a
           href="/#experience"
           onClick={handleNavClick('/experience')}
-          className="hover:text-blue transition-colors"
+          className="hover:text-white transition-colors"
         >
           Experiencia
         </a>
@@ -105,7 +105,7 @@ export default function Header() {
           href={portfolioData.hero.linkedin}
           target="_blank"
           rel="me noopener noreferrer"
-          className="hover:text-blue transition-colors"
+          className="hover:text-white transition-colors"
           aria-label="LinkedIn"
         >
           <FaLinkedin className="text-lg sm:text-xl" />
@@ -114,7 +114,7 @@ export default function Header() {
           href={portfolioData.hero.github}
           target="_blank"
           rel="me noopener noreferrer"
-          className="hover:text-blue transition-colors"
+          className="hover:text-white transition-colors"
           aria-label="GitHub"
         >
           <FaGithub className="text-lg sm:text-xl" />
@@ -123,14 +123,14 @@ export default function Header() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-blue transition-colors"
+          className="hover:text-white transition-colors"
           aria-label="WhatsApp"
         >
           <FaWhatsapp className="text-lg sm:text-xl" />
         </a>
         <a
           href={`mailto:${portfolioData.hero.email}`}
-          className="hover:text-blue transition-colors"
+          className="hover:text-white transition-colors"
           aria-label="Correo"
         >
           <FaEnvelope className="text-lg sm:text-xl" />

@@ -15,8 +15,8 @@ export default function Panel({ children, className = '', padding = 'md', as: Co
   const spotlightBackground = useMotionTemplate`
     radial-gradient(
       450px circle at ${mouseX}px ${mouseY}px,
-      rgba(59, 130, 246, 0.40),
-      rgba(59, 130, 246, 0.15) 45%,
+      rgba(255, 255, 255, 0.14),
+      rgba(255, 255, 255, 0.06) 45%,
       transparent 72%
     )
   `;

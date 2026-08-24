@@ -85,7 +85,7 @@ export default function Skills() {
             <div className="flex flex-col gap-8">
               {portfolioData.skills.hard.map((categoryGroup) => (
                 <div key={categoryGroup.category} className="flex flex-col gap-3 items-center">
-                  <h4 className="text-xs sm:text-sm font-bold text-blue-light/80 uppercase tracking-widest text-center mb-1">
+                  <h4 className="text-xs sm:text-sm font-bold text-foreground/65 uppercase tracking-widest text-center mb-1">
                     {categoryGroup.category}
                   </h4>
                   <div className="flex flex-wrap justify-center gap-2.5">
@@ -96,7 +96,7 @@ export default function Skills() {
                       return (
                         <div
                           key={skill.name}
-                          className="group flex flex-row items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-background border border-panel-border shadow-[0_1px_2px_rgba(59,130,246,0.14),0_4px_12px_rgba(59,130,246,0.10)] hover:bg-blue/14 hover:border-blue-light/45 hover:shadow-[0_0_20px_rgba(59,130,246,0.32)] transition-all duration-300 cursor-default w-auto min-w-[120px]"
+                          className="group flex flex-row items-center justify-center gap-2 px-4 py-3 rounded-2xl bg-background border border-panel-border shadow-[0_1px_2px_rgba(255,255,255,0.10),0_4px_12px_rgba(255,255,255,0.06)] hover:bg-white/8 hover:border-white/35 hover:shadow-[0_0_20px_rgba(255,255,255,0.18)] transition-all duration-300 cursor-default w-auto min-w-[120px]"
                         >
                           <Icon className="text-lg" style={{ color: iconColor }} />
                           <span className="text-sm font-semibold tracking-wide text-foreground/90 transition-colors">
@@ -122,7 +122,7 @@ export default function Skills() {
               {portfolioData.skills.soft.map((skill) => (
                 <div
                   key={skill}
-                  className="group flex flex-row items-center justify-center px-6 py-3.5 rounded-2xl bg-background border border-panel-border shadow-[0_1px_2px_rgba(59,130,246,0.14),0_4px_12px_rgba(59,130,246,0.10)] hover:bg-blue/14 hover:border-blue-light/45 hover:shadow-[0_0_20px_rgba(59,130,246,0.32)] transition-all duration-300 cursor-default w-auto min-w-[140px]"
+                  className="group flex flex-row items-center justify-center px-6 py-3.5 rounded-2xl bg-background border border-panel-border shadow-[0_1px_2px_rgba(255,255,255,0.10),0_4px_12px_rgba(255,255,255,0.06)] hover:bg-white/8 hover:border-white/35 hover:shadow-[0_0_20px_rgba(255,255,255,0.18)] transition-all duration-300 cursor-default w-auto min-w-[140px]"
                 >
                   <span className="text-sm font-semibold tracking-wide text-foreground/90 transition-colors">
                     {skill}

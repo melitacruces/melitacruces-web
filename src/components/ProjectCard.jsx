@@ -16,14 +16,14 @@ export default function ProjectCard({ project }) {
           />
         )}
         <div className="absolute left-3 bottom-3 z-20">
-          <span className="px-3 py-1.5 bg-black border border-white/10 rounded-2xl text-xs text-blue-light uppercase font-bold tracking-widest shadow-lg">
+          <span className="px-3 py-1.5 bg-black border border-white/10 rounded-2xl text-xs text-tag-light uppercase font-bold tracking-widest shadow-lg">
             {project.category}
           </span>
         </div>
       </div>
 
       <div className="p-5 sm:p-6 flex flex-col flex-grow relative gap-4">
-        <h3 className="text-xl sm:text-2xl font-bold text-foreground/90 group-hover:text-blue-light transition-colors leading-tight tracking-tight">
+        <h3 className="text-xl sm:text-2xl font-bold text-foreground/90 group-hover:text-white transition-colors leading-tight tracking-tight">
           {project.title}
         </h3>
 

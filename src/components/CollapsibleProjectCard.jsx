@@ -4,13 +4,31 @@ import Panel from '@/components/Panel';
 import ProjectActions from '@/components/ProjectActions';
 import TechBadge from '@/components/TechBadge';
 
-export default function CollapsibleProjectCard({ project, isExpanded, onToggle }) {
+export default function CollapsibleProjectCard({
+  project,
+  isExpanded,
+  collapsedDescriptionLines = 2,
+  collapsedMinHeight,
+  onCollapseComplete,
+  onToggle,
+}) {
+  const collapsedDescriptionStyle = isExpanded
+    ? undefined
+    : {
+        display: '-webkit-box',
+        overflow: 'hidden',
+        WebkitBoxOrient: 'vertical',
+        WebkitLineClamp: collapsedDescriptionLines,
+      };
+
   return (
     <Panel
       as="article"
       padding="none"
       onClick={onToggle}
+      data-collapsible-project-card
       className="overflow-hidden group flex flex-col cursor-pointer"
+      style={!isExpanded && collapsedMinHeight ? { minHeight: collapsedMinHeight } : undefined}
     >
       {project.image && (
         <img
@@ -22,7 +40,7 @@ export default function CollapsibleProjectCard({ project, isExpanded, onToggle }
           decoding="async"
         />
       )}
-      <AnimatePresence initial={false}>
+      <AnimatePresence initial={false} onExitComplete={onCollapseComplete}>
         {isExpanded && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
@@ -42,7 +60,7 @@ export default function CollapsibleProjectCard({ project, isExpanded, onToggle }
                 />
               )}
               <div className="absolute left-3 bottom-3 z-20">
-                <span className="px-3 py-1.5 bg-black border border-white/10 rounded-2xl text-xs text-blue-light uppercase font-bold tracking-widest shadow-lg">
+                <span className="px-3 py-1.5 bg-black border border-white/10 rounded-2xl text-xs text-tag-light uppercase font-bold tracking-widest shadow-lg">
                   {project.category}
                 </span>
               </div>
@@ -51,20 +69,26 @@ export default function CollapsibleProjectCard({ project, isExpanded, onToggle }
         )}
       </AnimatePresence>
 
-      <div className="p-5 sm:p-6 flex flex-col flex-grow relative gap-4">
-        <h3 className="text-xl sm:text-2xl font-bold text-foreground/90 group-hover:text-blue-light transition-colors leading-tight tracking-tight line-clamp-2">
+      <div
+        data-collapsible-project-content
+        className="p-5 sm:p-6 flex flex-col flex-grow relative gap-4"
+      >
+        <h3
+          data-collapsible-project-title
+          className="text-xl sm:text-2xl font-bold text-foreground/90 group-hover:text-white transition-colors leading-tight tracking-tight line-clamp-3"
+        >
           {project.title}
         </h3>
 
         <p
-          className={`text-sm md:text-base font-light text-foreground/70 leading-relaxed ${
-            isExpanded ? '' : 'line-clamp-2'
-          }`}
+          data-collapsible-project-description
+          className="text-sm md:text-base font-light text-foreground/70 leading-relaxed"
+          style={collapsedDescriptionStyle}
         >
           {project.description}
         </p>
 
-        <div className="flex flex-col mt-auto w-full">
+        <div data-collapsible-project-footer className="flex flex-col mt-auto w-full">
           <AnimatePresence initial={false}>
             {isExpanded && (
               <motion.div
@@ -91,7 +115,7 @@ export default function CollapsibleProjectCard({ project, isExpanded, onToggle }
           <div className="w-full flex items-center justify-center text-foreground/50 transition-colors">
             <FaChevronDown
               className={`transition-transform duration-500 ease-[0.04,0.62,0.23,0.98] ${
-                isExpanded ? 'rotate-180 text-blue-light' : 'rotate-0 group-hover:text-blue-light'
+                isExpanded ? 'rotate-180 text-white' : 'rotate-0 group-hover:text-white'
               } text-xl`}
             />
           </div>

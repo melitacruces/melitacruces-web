@@ -4,7 +4,7 @@ export default function HeroBackground() {
       className="absolute inset-0 overflow-hidden pointer-events-none z-0 bg-background"
       aria-hidden="true"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue/20 via-background to-background z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-background to-background z-0" />
 
       <div className="hero-orb hero-orb--1" />
       <div className="hero-orb hero-orb--2" />
@@ -20,7 +20,7 @@ export default function HeroBackground() {
         }}
       />
 
-      <div className="absolute top-[-20%] right-[-10%] w-[150%] h-[300px] bg-gradient-to-b from-blue-light/5 via-transparent to-transparent rotate-[-35deg] blur-[50px] z-20" />
+      <div className="absolute top-[-20%] right-[-10%] w-[150%] h-[300px] bg-gradient-to-b from-white/5 via-transparent to-transparent rotate-[-35deg] blur-[50px] z-20" />
 
       <div className="absolute bottom-0 inset-x-0 h-56 bg-gradient-to-t from-background to-transparent z-30" />
     </div>

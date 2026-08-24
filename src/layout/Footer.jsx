@@ -14,13 +14,13 @@ import { whatsappUrl } from '@/lib/contactLinks';
 export default function Footer() {
   return (
     <footer className="w-full relative z-10 mt-20" id="contact">
-      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-blue/30 to-transparent" />
-      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-blue/5 to-transparent pointer-events-none -z-10" />
+      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-white/25 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-white/5 to-transparent pointer-events-none -z-10" />
 
       <div className="container pt-16 pb-12 flex flex-col items-center text-center sm:text-left sm:flex-row sm:items-end sm:justify-between gap-10 relative z-10">
         <div className="flex flex-col items-center sm:items-start gap-5">
           <h3 className="text-4xl font-bold tracking-tighter flex items-center gap-2">
-            <FaUserTie className="text-[1em] text-blue" />
+            <FaUserTie className="text-[1em] text-accent" />
             <span>MC</span>
           </h3>
           <p className="text-foreground/70 text-sm lg:text-base lg:whitespace-nowrap">
@@ -28,13 +28,13 @@ export default function Footer() {
           </p>
           <div className="flex flex-col gap-3 mt-4 text-sm text-foreground/60">
             <p className="flex items-center justify-center sm:justify-start gap-3">
-              <FaEnvelope className="text-blue-light/70 text-base" /> {portfolioData.hero.email}
+              <FaEnvelope className="text-foreground/65 text-base" /> {portfolioData.hero.email}
             </p>
             <p className="flex items-center justify-center sm:justify-start gap-3">
-              <FaPhone className="text-blue-light/70 text-base" /> {portfolioData.hero.phone}
+              <FaPhone className="text-foreground/65 text-base" /> {portfolioData.hero.phone}
             </p>
             <p className="flex items-center justify-center sm:justify-start gap-3">
-              <FaLocationDot className="text-blue-light/70 text-base" /> {portfolioData.hero.location}
+              <FaLocationDot className="text-foreground/65 text-base" /> {portfolioData.hero.location}
             </p>
           </div>
         </div>

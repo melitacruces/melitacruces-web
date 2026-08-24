@@ -54,7 +54,7 @@ export default function Experience() {
         </div>
         <div className="mt-10 max-w-5xl mx-auto relative pl-8 sm:pl-12" ref={containerRef}>
           <div
-            className="absolute left-[-1px] w-[2px] bg-blue/10 z-0 overflow-hidden"
+            className="absolute left-[-1px] w-[2px] bg-white/10 z-0 overflow-hidden"
             style={{ top: track.top, height: track.height }}
           >
             {animateTimeline && (
@@ -67,7 +67,7 @@ export default function Experience() {
                 <div
                   className="absolute left-1/2 -translate-x-1/2 w-[3px] h-[60px] rounded-full z-10 -mt-[60px]"
                   style={{
-                    background: 'linear-gradient(to bottom, transparent, rgba(59,130,246,0.6), #ffffff)',
+                    background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.55), #ffffff)',
                     boxShadow: '0 15px 15px -2px rgba(255,255,255,0.8)',
                   }}
                 />
@@ -81,7 +81,7 @@ export default function Experience() {
               className="relative mb-14 last:mb-0 group/timeline"
             >
               <div className="timeline-node-wrapper absolute -left-[32px] sm:-left-[48px] top-6 flex items-center justify-center w-4 h-4 z-20 translate-x-[-50%]">
-                <div className="absolute w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-blue/20 blur-[1px]" />
+                <div className="absolute w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/15 blur-[1px]" />
 
                 <motion.div
                   className="relative w-3 h-3 sm:w-4 sm:h-4 rounded-full border-[2px]"
@@ -89,12 +89,12 @@ export default function Experience() {
                     animateTimeline
                       ? {
                           boxShadow: [
-                            '0 0 8px 0px rgba(59,130,246,0.4)',
-                            '0 0 20px 4px rgba(59,130,246,1)',
-                            '0 0 8px 0px rgba(59,130,246,0.4)',
-                            '0 0 8px 0px rgba(59,130,246,0.4)',
+                            '0 0 8px 0px rgba(255,255,255,0.3)',
+                            '0 0 20px 4px rgba(255,255,255,0.8)',
+                            '0 0 8px 0px rgba(255,255,255,0.3)',
+                            '0 0 8px 0px rgba(255,255,255,0.3)',
                           ],
-                          borderColor: ['#3b82f6', '#3b82f6', '#3b82f6', '#3b82f6'],
+                          borderColor: ['#f5f5f5', '#ffffff', '#f5f5f5', '#f5f5f5'],
                         }
                       : {}
                   }
@@ -106,9 +106,9 @@ export default function Experience() {
                     delay: dotTops[index] * TIMELINE_DURATION || 0,
                   }}
                   style={{
-                    backgroundColor: '#080808',
-                    borderColor: '#3b82f6',
-                    boxShadow: '0 0 12px 0px rgba(59,130,246,0.5)',
+                    backgroundColor: '#050505',
+                    borderColor: '#f5f5f5',
+                    boxShadow: '0 0 12px 0px rgba(255,255,255,0.35)',
                     willChange: 'box-shadow, border-color',
                   }}
                 />
@@ -118,12 +118,12 @@ export default function Experience() {
                   <h3 className="text-xl sm:text-2xl font-bold tracking-tight">
                     {experience.role}
                   </h3>
-                  <span className="text-xs sm:text-sm font-semibold px-3 py-1.5 bg-[#16223a] text-blue-light rounded-2xl border border-blue/20 w-max flex items-center gap-2 tracking-wide">
+                  <span className="text-xs sm:text-sm font-semibold px-3 py-1.5 bg-tag/10 text-tag-light rounded-2xl border border-tag/20 w-max flex items-center gap-2 tracking-wide">
                     <FaCalendarDays className="text-sm opacity-70" />
                     {experience.year}
                   </span>
                 </div>
-                <h4 className="text-base sm:text-lg text-blue-light mb-4 relative z-10 group-hover:text-blue transition-colors">
+                <h4 className="text-base sm:text-lg text-foreground/70 mb-4 relative z-10 group-hover:text-white transition-colors">
                   {experience.company}
                 </h4>
                 <p className="text-sm md:text-base font-light text-foreground/70 leading-relaxed relative z-10">
